@@ -12,7 +12,7 @@ class PluginConfig:
 
     # Plugin metadata
     NAME = "EDRavenColonialAgent"
-    VERSION = "0.1.0"
+    VERSION = "1.0.0"
 
     # API configuration
     DEFAULT_API_BASE = "https://ravencolonial100-awcbdvabgze4c5cq.canadacentral-01.azurewebsites.net"

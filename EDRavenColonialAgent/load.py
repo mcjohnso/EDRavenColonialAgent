@@ -34,7 +34,7 @@ import construction_completion
 
 # Plugin metadata
 plugin_name = os.path.basename(os.path.dirname(__file__))
-__version__ = "0.1.0"
+__version__ = "1.0.0"
 plugin_version = __version__
 
 # Setup logging using config module
