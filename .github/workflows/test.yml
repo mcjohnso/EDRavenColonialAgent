@@ -1,0 +1,25 @@
+name: Test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # EDMC's runtime modules aren't installed on the runner, so we can't import
+      # load.py here — compile-check every module to catch syntax errors.
+      - name: Compile-check all modules
+        run: python -m compileall -q .
+
+      # Pure-logic tests (no EDMC / tkinter / network imports).
+      - name: Core unit tests
+        run: python tests/test_core.py
